@@ -3,7 +3,7 @@ import json
 import os.path
 
 
-def unpack(packed_file, output_directory):
+def unpack(packed_file: str, output_directory: str) -> None:
     project_title = packed_file.rstrip(".json")
 
     with open(packed_file, "r") as pf:
@@ -33,7 +33,7 @@ def unpack(packed_file, output_directory):
         json.dump(json_data, mf, indent=2)
 
 
-def pack(packed_file, input_directory):
+def pack(packed_file: str, input_directory: str) -> None:
     project_title = packed_file.rstrip(".json")
 
     manifest_file = f"{input_directory}/{project_title}_manifest.json"
